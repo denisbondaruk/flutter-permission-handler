@@ -27,6 +27,9 @@ project.getTasks().withType(JavaCompile){
 apply plugin: 'com.android.library'
 
 android {
+    if (!project.hasProperty("android.buildCacheDir")) {
+        namespace "com.baseflow.permissionhandler"
+    }
     compileSdkVersion 33
 
     compileOptions {
